@@ -1,13 +1,16 @@
 r = Random.new();
 
 r.srand(10)
-puts r.rand()
+hoge = r.rand()
 r.srand(20)
-puts r.rand()
+fuga = r.rand()
 r.srand(10)
-puts r.rand()
+foo = r.rand()
 
-100.times do |i|
+puts hoge == fuga
+puts hoge == foo
+
+3.times do |i|
   puts r.rand()
   puts r.rand(0)
   puts r.rand(10)
