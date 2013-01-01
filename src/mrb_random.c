@@ -27,6 +27,7 @@
 
 #include <stdio.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "mruby.h"
 #include "mruby/variable.h"
@@ -146,6 +147,18 @@ static mrb_value mrb_random_srand(mrb_state *mrb, mrb_value self)
     return old_seed;
 }
 
+mrb_value ap_mrb_sleep(mrb_state *mrb, mrb_value self)
+{   
+
+    mrb_int time;
+
+    mrb_get_args(mrb, "i", &time);
+    sleep((int)time);
+
+    return self;
+}
+
+
 void mrb_mruby_random_gem_init(mrb_state *mrb)
 {
     struct RClass *random;
@@ -154,4 +167,5 @@ void mrb_mruby_random_gem_init(mrb_state *mrb)
 
     mrb_define_method(mrb, random, "rand", mrb_random_rand, ARGS_ANY());
     mrb_define_method(mrb, random, "srand", mrb_random_srand, ARGS_ANY());
+    mrb_define_class_method(mrb, random, "sleep", ap_mrb_sleep, ARGS_ANY());
 }
