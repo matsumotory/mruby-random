@@ -156,3 +156,8 @@ void mrb_mruby_random_gem_init(mrb_state *mrb)
     mrb_define_class_method(mrb, random, "rand", mrb_random_rand, ARGS_ANY());
     mrb_define_class_method(mrb, random, "srand", mrb_random_srand, ARGS_ANY());
 }
+
+void mrb_mruby_random_gem_final(mrb_state *mrb)
+{
+}
+
