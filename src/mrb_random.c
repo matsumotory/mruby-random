@@ -25,13 +25,11 @@
 ** [ MIT license: http://www.opensource.org/licenses/mit-license.php ]
 */
 
-#include <stdio.h>
-#include <time.h>
-#include <unistd.h>
-
 #include "mruby.h"
 #include "mruby/variable.h"
 #include "mt19937ar.h"
+
+#include <time.h>
 
 #define RAND_SEED_KEY "$mrb_ext_rand_seed"
  
