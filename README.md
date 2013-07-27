@@ -1,3 +1,7 @@
+# This mrbgem was included in mruby/mruby
+
+This mrbgem is random class sample.
+
 # Random Module for mruby
 mruby random module with Mersenne Twister.
 
